@@ -1,0 +1,30 @@
+/* form default */
+	.app-form-default{
+		max-width: 1200px;
+	}
+	.app-form-title-default{
+
+	}
+	.app-form-div-default{
+
+	}
+	#signature {
+	    box-shadow: 0 11px 6px -7px rgba(0, 0, 0, 0.1);
+	    -webkit-box-shadow: 0 11px 6px -7px rgba(0, 0, 0, 0.1);
+	    -moz-box-shadow: 0 11px 6px -7px rgba(0,0,0,0.1);
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    background: #DFEFF5;
+	    margin-top: 20px;
+	}
+	#signature canvas{
+		min-height: 300px;
+	}
+	#signature .sign-here{
+		margin-left: auto;
+	    margin-right: auto;
+	    width: 140px;
+	    margin-top: 10px;
+	    padding-top: 10px;
+	}
+/* end form default */
