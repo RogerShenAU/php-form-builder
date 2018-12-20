@@ -12,12 +12,11 @@ function getFormData($index = ''){
 						'formlist' => 'default',
 					),
 					'form_action' => 'next-step.php',		
-					'title' => 'Demo Form',					// form name to be displayed at the top of the page
-					'name' => 'demo-form',					// form id, form name to be stored in the database
+					'title' => 'Demo Form',							// form name to be displayed at the top of the page
+					'name' => 'demo-form',							// form id; form name to be stored in the database
 					'fields' => array(
 						'sth' => array(								// <input name="sth" id="sth" ...>
-							'type' => 'text',						// <input type="text" ...> - with extra code to be added
-									// avaiable types: text, date, select, signature ...
+							'type' => 'text',						// <input type="text" ...> - with extra code to be added. avaiable types: text, date, select, signature ...
 							'display_name' => 'Display Name',		// <label>Display Name</lable>
 							'placeholder' => 'Enter...',			// <input placeholder="Enter..." ...>
 							'required' => true,
@@ -56,14 +55,14 @@ function getFormData($index = ''){
 					),
 					'form_action' => 'next-step.php',
 					'title' => 'Demo Form Two',
-					'name' => 'demo-form-two',				// form id, form name to be stored in the database
+					'name' => 'demo-form-two',						// form id, form name to be stored in the database
 					'fields' => array(
-						'date' => array(						// use 'date' as name and id to reduce input
-							'type' => 'date',					// <input type="text" ...> - with extra code to be added
-							'display_name' => 'Date',			// <label>Date</lable>
-							'placeholder' => 'dd-mm-yyyy',		// <input place ...>
+						'date' => array(							// use 'date' as name and id to reduce input
+							'type' => 'date',						// <input type="text" ...> - with extra code to be added
+							'display_name' => 'Date',				// <label>Date</lable>
+							'placeholder' => 'dd-mm-yyyy',			// <input place ...>
 							'required' => true,
-							'other' => '',						// <inpput sth ...> - reserve a space at end just in case
+							'other' => '',							// <inpput sth ...> - reserve a space at end just in case
 						),
 						'business-name' => array(
 							'type' => 'text',

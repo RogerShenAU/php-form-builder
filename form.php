@@ -1,9 +1,9 @@
 <?php
 /*
-** Use this file as a form build library
+** form build library
 */
 
-$path = str_replace($_SERVER['DOCUMENT_ROOT'], '', dirname(__FILE__)); // get current folder relatvie path
+$path = str_replace($_SERVER['DOCUMENT_ROOT'], '', dirname(__FILE__)); // get current folder relative path
 define(PHP_FORM_BUILDER_LIB_DIR, $path);
 define(YOUR_APPLICATION_NAME, "Your Application Name");
 class PHP_FORM_BUILDER{
@@ -120,10 +120,10 @@ class PHP_FORM_BUILDER{
 	/* form field $args example
 			array(
 				'type' => 'text',						// <input type="text" ...> - with extra code to be added
-				'display_name' => 'Display Name',		// <label>Display Name</lable>
+				'display_name' => 'Display Name',		// <label>Display Name</label>
 				'placeholder' => 'Enter...',			// <input placeholder="Enter..." ...>
 				'required' => true,
-				'other' => 'required ',					// <inpput required ...>
+				'other' => 'required ',					// <input required ...>
 				'msg' => 'Some message'
 			)
 	*/
@@ -232,13 +232,14 @@ class PHP_FORM_BUILDER{
 
 					$hidekey = 'hide-'.$key;
 					echo '
-						<div class="field-container">
+						<div class="form-group">
 							<input type="hidden" name="'.$key.'" id="'.$hidekey.'">
 							<button id="clear-'.$hidekey.'" class="btn '.$args['btn-class'].'" type="button" onclick="$(\'#'.$key.'\').jSignature(\'clear\')">Clear Signature</button>
 							<div class="signature-msg">'.$args['msg'].'</div>
 							<div id="'.$key.'">
 								<h3 class="sign-here">Sign Here</h3>
 							</div>
+							<br/>
 						</div>
 						<script>
 							$(document).ready(function(){
@@ -333,7 +334,9 @@ class PHP_FORM_BUILDER{
 		function displayFormButtonTypeSubmit($key,$args,$formData){
 
 			if($formData['template']['field'] == "default"){
-				echo '<input class="'.$args['class'].'" type="'.$args['type'].'" id="'.$key.'" value="'.$args['value'].'">';
+				echo '<div class="form-group">
+						<input class="'.$args['class'].'" type="'.$args['type'].'" id="'.$key.'" value="'.$args['value'].'">
+					  </div>';
 				echo $args['other'];
 			}
 		}
@@ -976,7 +979,7 @@ class PHP_FORM_BUILDER{
 						if($args['file_template_type'] == 'pdf'){
 							//add FPDI support, FPDI extends TCPDF
 						}elseif ($args['file_template_type'] == 'img') {
-							// set bacground image
+							// set background image
 							$img_file = $args['file_template'];
 							$pdf->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
 						}else{
@@ -1045,7 +1048,7 @@ class PHP_FORM_BUILDER{
 					//-- end print info ---
 
 					// output
-					// "I" for display on the page, "F" for store, "D" for donwload
+					// "I" for display on the page, "F" for store, "D" for download
 					// $pdf->Output( 'pdfs/Prefix_' .$id . '.pdf', 'F');  // output pdf with prefix "Prefix_" and store under "pdfs" folder
 					$pdf->Output( $formData['name'].'_' .$formID .'.pdf', 'D');
 				}elseif($args['file_type'] == 'csv'){
